@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+		PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+		"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!--Eclipse 插件配置-->
+<!--<generatorConfiguration>-->
+<!--<context id="skyhotel" targetRuntime="MyBatis3">-->
+<!--<jdbcConnection-->
+<!--connectionURL="jdbc:mysql://101.200.123.157:3306/skyhotel?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull"-->
+<!--driverClass="com.mysql.jdbc.Driver" password="queryapi@312" userId="api"/>-->
+<!--<javaModelGenerator targetPackage="com.huoli.log.analysis.po"-->
+<!--targetProject="api-log-analysis"/>-->
+<!--<sqlMapGenerator targetPackage="com.huoli.log.analysis.dao.sql"-->
+<!--targetProject="api-log-analysis"/>-->
+<!--<javaClientGenerator targetPackage="com.huoli.log.analysis.dao"-->
+<!--targetProject="api-log-analysis" type="XMLMAPPER"/>-->
+<!--<table tableName="test_c3p0">-->
+<!--</table>-->
+<!--</context>-->
+<!--</generatorConfiguration>-->
+<!--IDEA maven配置-->
+<generatorConfiguration>
+	<classPathEntry
+			location="libs/mysql-connector-java-5.1.38.jar"/>
+	<context id="etl-admin" targetRuntime="MyBatis3">
+		<property name="autoDelimitKeywords" value="true"/>
+		<property name="beginningDelimiter" value="`"/>
+		<property name="endingDelimiter" value="`"/>
+		<commentGenerator>
+			<!--<property name="suppressAllComments" value="true"/>-->
+			<property name="suppressDate" value="true"/>
+			<property name="addRemarkComments" value="true"/>
+		</commentGenerator>
+		<jdbcConnection
+				connectionURL="jdbc:mysql://rm-bp1o1w10r2yij601sqo.mysql.rds.aliyuncs.com:3306/elt-admin?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull"
+				driverClass="com.mysql.jdbc.Driver" password="queryapi@123" userId="api"/>
+		<javaModelGenerator targetPackage="com.etl.admin.po"
+							targetProject="src/main/java"/>
+		<sqlMapGenerator targetPackage="com.etl.admin.dao.sql"
+						 targetProject="src/main/java"/>
+		<javaClientGenerator targetPackage="com.etl.admin.dao"
+							 targetProject="src/main/java" type="XMLMAPPER"/>
+		<table tableName="etl_data_source" modelType="flat">
+<!--			<generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+		</table>
+	</context>
+</generatorConfiguration>
